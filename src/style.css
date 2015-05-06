@@ -1,0 +1,21 @@
+thead {
+    text-align: left;
+    background-color:chartreuse;
+}
+table#videos {
+    border: 1px solid grey;
+    width: 70%;
+    padding:5px;
+}
+
+tr:nth-child(odd){
+    
+    border-bottom: 1px solid black;
+    background-color: azure;
+    
+}
+.add, .content, .filters, .deleteall, .alert{padding:20px;}
+
+.filters, .alert{float:left;}
+
+.content{clear:both;}

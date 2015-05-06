@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" uploadOnCheckin="3fdc9d5b-ad46-422e-a9e3-2f01ca0d89a7">
+    <serverData>
+      <paths name="OSUA4">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/public_html/CS290-assignment4-part2" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myUploadOnCheckinName" value="OSUA4" />
+  </component>
+</project>
