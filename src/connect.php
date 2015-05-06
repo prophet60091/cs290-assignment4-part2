@@ -8,8 +8,8 @@ class video{
        date_default_timezone_set('UTC');
        $this->usr = 'jackrobe-db';
        $this->db= 'jackrobe-db';
-       $this->host= 'oniddb.cws.oregonstate.edu';
-       $this->password = 'jSYd8HEWn4rUmsff';
+       $this->host= '';
+       $this->password = '';
        $this->err = array();
         $this->success = '';
 
