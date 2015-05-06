@@ -8,7 +8,7 @@ class video{
        date_default_timezone_set('UTC');
        $this->usr = 'jackrobe-db';
        $this->db= 'jackrobe-db';
-       $this->host= '';
+       $this->host= 'localhost';
        $this->password = '';
        $this->err = array();
         $this->success = '';
@@ -157,7 +157,7 @@ class video{
         if(!is_numeric($time) || $time > 300 || $time <= 0){
 
             $time = 'undefined';
-            array_push($this->err, "Length of movie is invalid");
+                array_push($this->err, "Length of movie is invalid");
             return false;
         }
         $time= mysqli_real_escape_string($this->ms, $time);
@@ -168,11 +168,10 @@ class video{
     //Check to make sure the user entered a plausible text
     //@param text is altered in the event it is invalid
     public function valid_text(&$text){
-        $text = mysqli_real_escape_string($this->ms, $text);
 
-        if(is_numeric($text) || strlen($text) > 255 || strlen($text) == 0){
+        if(is_numeric($text) || strlen($text) > 255 || strlen($text) == 0 || $text == ''){
 
-            $text = 'INVALID ENTRY';
+            $text = 'INVALID DATA';
             array_push($this->err, "Your entry is too long/short or it was numeric!");
 
             return false;
@@ -197,6 +196,7 @@ class video{
 
         if(!$this->valid_text($data['title']) || !$this->valid_time($data['length']) || !$this->valid_text($data['category']) || $flag_undefined){
             $_SESSION['formvalues'] = $data;
+            array_push($this->err, "You entered invalid data try again");
             return false;
         }
 
@@ -237,10 +237,12 @@ class video{
     //REQUIRES a SET POST VARIALBES
     //@param data is the post data
     function addVideo($data){
+        $title = mysqli_real_escape_string($this->ms, $data['title']);
+        $category = mysqli_real_escape_string($this->ms, $data['category']);
 
         if($this->validate($data)){
 
-            $query =" INSERT INTO a4 (title, category, len )VALUES ('$data[title]', '$data[category]', '$data[length]')";
+            $query =" INSERT INTO a4 (title, category, len )VALUES ('$title', '$category', '$data[length]')";
 
             $result = $this->ms->query($query);
             if($result){
@@ -248,7 +250,7 @@ class video{
 
                 $_SESSION['formvalues'] = '';
             }else{
-                array_push($this->err, 'Couldnt add video:' . $query);
+                array_push($this->err, 'Couldnt add video: bad query ');
 
             }
         }else{
@@ -265,10 +267,8 @@ $ta = new video;
 
 if($_POST){
 
-    if($_POST['title'] || $_POST['length'] || $_POST['category']){
+    if(isset($_POST['title']) || isset($_POST['length']) || isset($_POST['category'])){
         $ta->addVideo($_POST);
-        $ta->success = 'Added Video';
-
         include 'content.php';
 
     }

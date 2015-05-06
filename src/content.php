@@ -16,8 +16,9 @@
 
 
 </div>
-<div class="alerts"><span id="status">STATUS: <?php echo $ta->success; ?></span>
-    <span id="errors"><?php if($ta->err[0]) echo ' ERRORS: '. $ta->err[0]; ?></span></div>
+<div class="alerts">
+    <span id="status">STATUS: <?php echo $ta->success; ?></span>
+</div>
 
 <div class="content">
     <table id="videos">
@@ -42,7 +43,16 @@
     </form>
 
     <span id="status">STATUS: <?php echo $ta->success; ?></span>
-    <span id="errors"><?php if($ta->err[0]) echo ' ERRORS: '. $ta->err[0]; ?></span>
+    <span id="errors"><?php
+        if($ta->err[0]){
+
+            echo "Errors: ";
+                foreach(  $ta->err as $value ){
+                    echo $value . ', ';
+            }
+
+
+        }  ?></span>
 </div>
 <div class="deleteall">
     <form id="delVideo"  name="deleteALL" action="connect.php" method="POST">
