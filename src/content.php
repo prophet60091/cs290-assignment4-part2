@@ -45,13 +45,10 @@
     <span id="status">STATUS: <?php echo $ta->success; ?></span>
     <span id="errors"><?php
         if($ta->err[0]){
-
             echo "Errors: ";
                 foreach(  $ta->err as $value ){
                     echo $value . ', ';
             }
-
-
         }  ?></span>
 </div>
 <div class="deleteall">

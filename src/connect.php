@@ -11,7 +11,7 @@ class video{
        $this->host= '';
        $this->password = '';
        $this->err = array();
-        $this->success = '';
+       $this->success = '';
 
        $this->ms = new mysqli($this->host, $this->usr, $this->password ,$this->db);
 
