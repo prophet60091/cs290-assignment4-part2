@@ -8,7 +8,7 @@ class video{
        date_default_timezone_set('UTC');
        $this->usr = 'jackrobe-db';
        $this->db= 'jackrobe-db';
-       $this->host= 'localhost';
+       $this->host= '';
        $this->password = '';
        $this->err = array();
         $this->success = '';
