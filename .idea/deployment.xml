@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData">
+  <component name="PublishConfigData" persistUploadOnCheckin="false">
     <serverData>
       <paths name="OSUA4">
         <serverdata>
           <mappings>
-            <mapping deploy="/public_html/CS290-assignment4-part2" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/public_html/CS290-assignment4-part2" local="$PROJECT_DIR$/../cs290-assignment4-part2" web="/" />
           </mappings>
         </serverdata>
       </paths>
