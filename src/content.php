@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="Robert Jackson">
     <meta name="description" content="">
-    <title>Videos.php</title>
+    <title>Videos</title>
     <script src="formFunctions.js" type="application/javascript"></script>
     <link rel="stylesheet" href="style.css" type="text/css"/>
 

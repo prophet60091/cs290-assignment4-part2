@@ -8,15 +8,16 @@ class video{
        date_default_timezone_set('UTC');
        $this->usr = 'jackrobe-db';
        $this->db= 'jackrobe-db';
-       $this->host= 'localhost';
-       $this->password = '';
+       $this->host= 'oniddb.cws.oregonstate.edu';
+       $this->password = 'jSYd8HEWn4rUmsff';
        $this->err = array();
         $this->success = '';
 
        $this->ms = new mysqli($this->host, $this->usr, $this->password ,$this->db);
 
        if($this->ms->connect_error){
-           array_push($this->$err, $this->ms->connect_error );
+           array_push($this->err, $this->ms->connect_error );
+           echo $this->ms->connect_error;
            return false;
        }
        return true;
